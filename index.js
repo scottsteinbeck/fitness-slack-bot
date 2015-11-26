@@ -69,20 +69,6 @@ function filterBots (users) {
     return users.filter(user => !user.isBot);
 }
 
-function getRandomFromDataset (dataset, opts) {
-    opts = opts || {
-        exclude: []
-    };
-
-    if (dataset.length === opts.exclude.length) return dataset[0];
-
-    let pick = dataset[Math.floor(Math.random() * dataset.length)];
-    if (opts.exclude.indexOf(pick.username) !== -1) {
-        return getRandomFromDataset(dataset, opts);
-    }
-    return pick;
-}
-
 function connectToRTM () {
     return new Promise((resolve, reject) => {
 		request.get({
@@ -154,13 +140,39 @@ function exerciseDone () {
     });
 }
 
+function getRandomFromDataset (dataset, exclude) {
+    exclude = exclude || [];
+
+    if (dataset.length === exclude.length) return false;
+
+    let pick = dataset[Math.floor(Math.random() * dataset.length)];
+    if (exclude.indexOf(pick.username) !== -1) {
+        return getRandomFromDataset(dataset, exclude);
+    }
+    return pick;
+}
+
 function rollTheDice (opts) {
-    let randomUser = getRandomFromDataset(users, opts);
+    opts = opts || {
+        exclude: []
+    };
+
+    let randomUser = getRandomFromDataset(users, opts.exclude);
+
+    if (!randomUser) {
+        console.log('[INFO]: No active users, delaying for 5 minutes.');
+        setTimeout(() => {
+            rollTheDice();
+        }, 5 * 60 * 1000);
+        return;
+    }
+
     console.log('> Picked user:', randomUser.username);
+
     randomUser.isActive().then(isActive => {
         if (!isActive) {
             console.log(`${randomUser.realName} ain't active! Looking for new victim...`);
-            return rollTheDice();
+            return rollTheDice({ exclude: opts.exclude.concat(randomUser.username) });
         }
 
         let exercise = getRandomFromDataset(config.exercises);
