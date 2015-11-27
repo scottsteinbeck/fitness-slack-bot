@@ -47,7 +47,7 @@ class User {
                 json: true
             }, (err, res, body) => {
                 if (err) reject(false);
-                resolve(body.presence === 'active');
+                resolve(body && body.presence === 'active');
             });
         });
     }
