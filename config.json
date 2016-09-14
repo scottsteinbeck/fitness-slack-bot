@@ -1,8 +1,8 @@
 {
-    "teamDomain": "x-team",
-    "botId": "U0EVA9A84",
-    "channelId": "C0F405L4B",
-    "channelName": "liftbot",
+    "teamDomain": "CloudGQ",
+    "botId": "B2AS7E7EU",
+    "channelId": "C2BDK7Y81",
+    "channelName": "workout",
     "waitTime": 3,
     "minInterval": 30,
     "maxInterval": 60,
@@ -14,24 +14,84 @@
         "units": "reps"
     }, {
         "id": 1,
-        "name": "planks",
-        "minReps": 30,
-        "maxReps": 60,
-        "units": "seconds"
+        "name": "burpees",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
     }, {
         "id": 2,
-        "name": "wall sit",
-        "minReps": 30,
-        "maxReps": 60,
-        "units": "seconds"
+        "name": "Scissor Kicks",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
     }, {
         "id": 3,
-        "name": "chair dips",
+        "name": "Bicycle Situps",
         "minReps": 10,
         "maxReps": 30,
         "units": "reps"
     }, {
         "id": 4,
+        "name": "Sumo Squats",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
+    }, {
+        "id": 5,
+        "name": "Side Plank",
+        "minReps": 10,
+        "maxReps": 60,
+        "units": "seconds"
+    }, {
+        "id": 6,
+        "name": "Plank Sholder Taps",
+        "minReps": 10,
+        "maxReps": 60,
+        "units": "seconds"
+    }, {
+        "id": 7,
+        "name": "Mountain Climbers",
+        "minReps": 10,
+        "maxReps": 60,
+        "units": "seconds"
+    }, {
+        "id": 8,
+        "name": "Toe Touches (situps)",
+        "minReps": 10,
+        "maxReps": 60,
+        "units": "seconds"
+    },{
+        "id": 9,
+        "name": "squats",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
+    }, {
+        "id": 10,
+        "name": "planks",
+        "minReps": 30,
+        "maxReps": 60,
+        "units": "seconds"
+    }, {
+        "id": 10,
+        "name": "lunges",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
+    }, {
+        "id": 12,
+        "name": "wall sit",
+        "minReps": 30,
+        "maxReps": 60,
+        "units": "seconds"
+    }, {
+        "id": 13,
+        "name": "chair dips",
+        "minReps": 10,
+        "maxReps": 30,
+        "units": "reps"
+    }, {
+        "id": 14,
         "name": "calf raises",
         "minReps": 20,
         "maxReps": 40,
